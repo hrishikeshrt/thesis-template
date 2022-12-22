@@ -1,0 +1,55 @@
+% prelude.tex
+%   - titlepage
+%   - dedication (optional)
+%   - approval sheet
+%   - course certificate
+%   - table of contents, list of tables and list of figures
+%   - nomenclature
+%   - abstract
+% =========================================================================== %
+
+
+\clearpage\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
+
+
+
+% TITLE PAGE
+%   - define \title{} \author{} \date{}
+\input{prelude/title}
+\author{My Name}
+\date{2022}
+
+%  - Roll number, required for title page, approval sheet, and
+%    certificate of course work
+\rollnum{MyRollNumber}
+
+%   - The default degree is ``Doctor of Philosophy''
+%     (unless the document style msthesis is specified
+%      and then the default degree is ``Master of Science'')
+%     Degree can be changed using the command \degree{}
+\iitkdegree{Doctor of Philosophy}
+
+%   - The default report type is preliminary report.
+%      * for a PhD thesis, specify \thesis
+%\thesis
+%      * for a M.Tech./M.Phil./M.Des./M.S. dissertation, specify \dissertation
+%\dissertation
+%      * for a DIIT/B.Tech./M.Sc.project report, specify \project
+%\project
+%      * for any other type, use  \reporttype{}
+\reporttype{synopsis}
+
+%   - The default department is ``Unknown Department''
+%     The department can be changed using the command \department{}
+\department{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}
+
+%    - Set the guide's name
+\setguide{Prof My Guide}
+%    - Set the coguide's name (if you have one)
+%\setcoguide{Prof Co Guide}
+%    - Set external guide (if you have one)
+%\setexguide{Prof External Guide}
+
+%   - once the above are defined, use \maketitle to generate the titlepage
+\maketitle
+

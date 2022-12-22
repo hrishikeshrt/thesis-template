@@ -1,0 +1,98 @@
+% prelude.tex
+%   - titlepage
+%   - dedication (optional)
+%   - approval sheet
+%   - course certificate
+%   - table of contents, list of tables and list of figures
+%   - nomenclature
+%   - abstract
+% =========================================================================== %
+
+
+\clearpage\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
+
+
+
+% TITLE PAGE
+%   - define \title{} \author{} \date{}
+\input{prelude/title}
+
+\author{My Name}
+\date{2022}
+
+%  - Roll number, required for title page, approval sheet, and
+%    certificate of course work
+\rollnum{MyRollNumber}
+
+%   - The default degree is ``Doctor of Philosophy''
+%     (unless the document style msthesis is specified
+%      and then the default degree is ``Master of Science'')
+%     Degree can be changed using the command \iitkdegree{}
+\iitkdegree{Doctor of Philosophy}
+
+%   - The default report type is preliminary report.
+%      * for a PhD thesis, specify \thesis
+\thesis
+%      * for a M.Tech./M.Phil./M.Des./M.S. dissertation, specify \dissertation
+%\dissertation
+%      * for a DIIT/B.Tech./M.Sc.project report, specify \project
+%\project
+%      * for any other type, use  \reporttype{}
+%\reporttype{ReportType}
+
+%   - The default department is ``Unknown Department''
+%     The department can be changed using the command \department{}
+\department{Computer Science and Engineering}
+
+%    - Set the guide's name
+\setguide{Prof My Guide}
+\setguidedept{Department of Computer Science and Engineering}
+
+%    - Set the coguide's name (if you have one)
+%\setcoguide{Prof Co Guide}
+%\setcoguidedept{Department of Computer Science and Engineering}
+
+%    - Set external guide (if you have one)
+%\setexguide{Prof External Guide}
+%\setexguidedept{Department of Computer Science and Engineering}
+
+%   - once the above are defined, use \maketitle to generate the titlepage
+\maketitle
+
+%--------------------------------------------------------------------%
+% CERTIFICATE
+%     The first page after the title page.
+\makecertificate
+
+%--------------------------------------------------------------------%
+% COPYRIGHT PAGE
+%   - To include a copyright page use \copyrightpage
+% \copyrightpage
+
+%--------------------------------------------------------------------%
+% ABSTRACT
+\include{prelude/abstract}
+
+%--------------------------------------------------------------------%
+% DEDICATION
+%   Dedications, if any.
+\include{prelude/dedication}
+
+%--------------------------------------------------------------------%
+% ACKNOWLEDGEMENTS
+\include{prelude/acknowledgments}
+
+%--------------------------------------------------------------------%
+% CONTENTS, TABLES, FIGURES
+
+\tableofcontents
+
+\listoftables
+
+% \cleardoublepage
+% \phantomsection \label{listoffig}
+% \addcontentsline{toc}{chapter}{List of Figures}
+% \listof{program}{List of Figures}
+\listoffigures
+
+\cleardoublepage\pagenumbering{arabic} % Make the page numbers Arabic (1, 2, etc)

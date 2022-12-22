@@ -1,0 +1,57 @@
+\documentclass[openright,twoside]{iitkthesis}
+
+% =========================================================================== %
+% Preamble
+
+\include{preamble/packages}
+\include{preamble/format}
+\include{preamble/macro}
+\include{preamble/shortcuts}
+
+\bibliography{citations}
+\graphicspath{{graphics/}}
+
+% End of Preamble
+% =========================================================================== %
+
+\begin{document}
+
+% =========================================================================== %
+% Include the prelude for title page, abstract, table of contents, etc
+% You need to modify it to contain your details
+
+\include{prelude}
+
+% =========================================================================== %
+% Include the technical part of the report
+
+\input{chapters/introduction}
+\input{chapters/technical}
+\input{chapters/applications}
+\input{chapters/related}
+\input{chapters/conclusions}
+
+% =========================================================================== %
+% PUBLICATIONS
+%  publications if any may be listed after the literature cited.
+%% \include{mypubs}
+
+
+\begin{singlespace}
+\cleardoublepage
+\phantomsection \label{listofref}
+\addcontentsline{toc}{chapter}{References}
+\renewcommand\bibname{References}
+\printbibliography
+\nocite{*}
+\end{singlespace}
+
+% =========================================================================== %
+% APPENDIX
+%  Appendices, if any, must precede the cited literatures.
+%  Appendices shall be numbered in Roman Capitals (e.g. Appendix IV)
+
+%% \appendix
+%% \include{appendix_something}
+
+\end{document}
