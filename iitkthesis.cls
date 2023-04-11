@@ -91,6 +91,7 @@
 \newcommand\@thesistitlebigskip{0.6in}
 \newcommand{\rollnum}[1]{\gdef\@rollnum{#1}}
 \newcommand{\iitkdegree}[1]{\gdef\@iitkdegree{#1}}
+\newcommand{\iitkprogramme}[1]{\gdef\@iitkprogramme{#1}}
 \newcommand{\department}[1]{\gdef\@department{#1}}
 \newcommand{\reporttype}[1]{\gdef\@doctype{#1}}
 \newcommand{\certificatetype}[1]{\gdef\@certificatetype{#1}}
@@ -102,6 +103,7 @@
 
 \gdef\@rollnum{Unknown 00000000}    % Default is Unknown 00000000
 \gdef\@iitkdegree{Unknown Degree}    % Default is Unknown Degree
+\gdef\@iitkprogramme{Unknown Programme} % Default is Unknown Programme
 \gdef\@doctype{preliminary report}  % Default is a preliminary report
 \gdef\@department{(Unknown Department)} % Default is Unknown
 
@@ -125,7 +127,8 @@
       {\large for the Degree of}\\[\@thesistitlemedskip]
       {\large \@iitkdegree} \\[\@thesistitlemedskip]
       {\large by} \\[\@thesistitlemedskip]
-      {\large \bf \@author} \\[\@thesistitlebigskip]
+      {\large \bf \@author} \\
+      {\large \@rollnum} \\[\@thesistitlebigskip]
       \vfill
       {\large \textit{to the}} \\
       {\large \MakeUppercase{Department of \@department}} \\%[\@thesistitlemedskip]
@@ -164,6 +167,11 @@
 \newcommand\@thesiscertificatebigskip{0.5in}
 \newcommand{\makecertificate}{
   \cleardoublepage
+  \newpage
+	\addtocounter{page}{1}
+
+	% \cleardoublepage
+  \addtocounter{page}{-2}
     \begin{center}
       {\large \bf CERTIFICATE}\\[\@thesiscertificatebigskip]
     \end{center}
@@ -180,6 +188,47 @@
     \begin{flushleft}
     \@date
     \end{flushleft}
+%change ends
+}
+
+%=============================================================================
+% DELCARATION
+%=============================================================================
+\newcommand{\makedeclaration}{
+
+%  \addtocounter{page}{1}
+
+ % \cleardoublepage
+	\newpage
+	\addtocounter{page}{1}
+
+	\cleardoublepage
+  \addtocounter{page}{-2}
+
+    \begin{center}
+      {\large \bf DECLARATION}\\[\@thesiscertificatebigskip]
+    \end{center}
+
+This is to certify that the thesis titled \textbf{\@title}
+has been authored by me. It presents the research conducted by me under the
+supervision of \textbf{\@advisorname}. To the best of my knowledge, it is an
+original work, both in terms of research content and narrative, and has not been
+submitted elsewhere, in part or in full, for a degree. Further, due credit has
+been attributed to the relevant state-of-the-art and collaborations (if any)
+with appropriate citations and acknowledgments, in line with established norms
+and practices. \\[\@thesiscertificatebigskip]
+
+
+\begin{flushright}
+    \rule{6cm}{1sp} \\
+    Signature \\
+    Name: \@author \\
+    Programme: \@iitkprogramme \\
+    Department: \@department \\
+    Indian Institute of Technology Kanpur\\
+    Kanpur 208016
+\end{flushright}
+
 %change ends
 }
 
@@ -282,6 +331,7 @@
 % =========================================================================== %
 \def\acknowledgments{
   \chapter*{Acknowledgements}
+  \addcontentsline{toc}{chapter}{Acknowledgements}
   \thispagestyle{empty}}
 \def\endacknowledgments{%
   \par\newpage}
