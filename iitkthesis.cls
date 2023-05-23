@@ -243,15 +243,15 @@ and practices. \\[\@thesiscertificatebigskip]
     \cleardoublepage
     \begin{center}
       {\large \bf ABSTRACT}\\[\@thesiscertificatebigskip]
-      Name of student: \textbf{\@author}\hspace{1 cm}Roll no: \textbf{\@rollnum} \\
+      Name of Student: \textbf{\@author}\hspace{1 cm}Roll no: \textbf{\@rollnum} \\
       Degree for which submitted: \textbf{\@iitkdegree} \\
       Department: \textbf{\@department} \\
-      Thesis title: \textbf{\@title} \\
+      Thesis Title: \textbf{\@title} \\
     \end{center}
     \begin{singlespace}
       Name of Thesis Supervisor: \textbf{\@advisorname}
     \end{singlespace}
-    Month and year of thesis submission: \textbf{\@date} \\
+    Month and Year of Thesis Submission: \textbf{\@date} \\
     \vspace{1 cm} \\
 }
 \def\endabstract{\par\newpage}
