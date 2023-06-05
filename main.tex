@@ -8,7 +8,7 @@
 \include{preamble/macro}
 \include{preamble/shortcuts}
 
-\bibliography{citations}
+% \bibliography{citations}
 \graphicspath{{graphics/}}
 
 % End of Preamble
@@ -42,7 +42,9 @@
 \phantomsection \label{listofref}
 \addcontentsline{toc}{chapter}{References}
 \renewcommand\bibname{References}
-\printbibliography
+% \printbibliography
+\bibliographystyle{apalike}
+\bibliography{citations}
 \nocite{*}
 \end{singlespace}
 
