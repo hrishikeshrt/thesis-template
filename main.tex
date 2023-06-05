@@ -33,9 +33,17 @@
 
 % =========================================================================== %
 % PUBLICATIONS
-%  publications if any may be listed after the literature cited.
-%% \include{mypubs}
+% Put publications in publications.bib, edit style in publications.tex
+% Make generates publications.bbl first and includes it here
 
+\cleardoublepage
+\phantomsection \label{listofpub}
+\addcontentsline{toc}{chapter}{Publications}
+\renewcommand\bibname{Publications}
+\input{publications.bbl}
+
+% =========================================================================== %
+% CITATIONS
 
 \begin{singlespace}
 \cleardoublepage

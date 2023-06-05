@@ -1,13 +1,11 @@
-LATEX = xelatex
-BIBTEX = bibtex
+all: .publications .thesis
 
-all: .thesis
+.publications: publications.tex publications.bib
+	latexmk -pdflatex='xelatex %O %S' -pdf -ps- -dvi- publications.tex
 
 .thesis: $(wildcard *.tex) $(wildcard chapters/*.tex) $(wildcard *.cls) citations.bib
 	latexpand main.tex > final.tex
 	latexmk -pdflatex='xelatex %O %S' -pdf -ps- -dvi- final.tex
-
-.PHONY: all clean
 
 clear:
 	latexmk -c -bibtex
