@@ -87,6 +87,7 @@
 %      * for a preliminary report, specify \prelim
 %   - once the above are defined, use \maketitle to generate the titlepage
 % =========================================================================== %
+\newcommand\@thesistitlesmskip{0.15in}
 \newcommand\@thesistitlemedskip{0.25in}
 \newcommand\@thesistitlebigskip{0.6in}
 \newcommand{\rollnum}[1]{\gdef\@rollnum{#1}}
@@ -128,9 +129,12 @@
       {\large \@iitkdegree} \\[\@thesistitlemedskip]
       {\large by} \\[\@thesistitlemedskip]
       {\large \bf \@author} \\
-      {\large \@rollnum} \\[\@thesistitlebigskip]
+      {\large \@rollnum} \\[\@thesistitlesmskip]
       \vfill
       {\large \textit{to the}} \\
+      [\@thesistitlesmskip]
+      \includegraphics[scale=0.2]{institute_logo}\\
+      [\@thesistitlesmskip]
       {\large \MakeUppercase{Department of \@department}} \\%[\@thesistitlemedskip]
       {\large INDIAN INSTITUTE OF TECHNOLOGY KANPUR}\\%[\@thesistitlemedskip]
       {\large \@date}
@@ -211,12 +215,13 @@
 
 This is to certify that the thesis titled \textbf{\@title}
 has been authored by me. It presents the research conducted by me under the
-supervision of \textbf{\@advisorname}. To the best of my knowledge, it is an
-original work, both in terms of research content and narrative, and has not been
-submitted elsewhere, in part or in full, for a degree. Further, due credit has
-been attributed to the relevant state-of-the-art and collaborations (if any)
-with appropriate citations and acknowledgments, in line with established norms
-and practices. \\[\@thesiscertificatebigskip]
+supervision of \textbf{\@advisorname}.\\
+To the best of my knowledge, it is an original work, both in terms of research
+content and narrative, and has not been submitted elsewhere, in part or in full,
+for a degree. Further, due credit has been attributed to the relevant
+state-of-the-art and collaborations (if any) with appropriate citations and
+acknowledgments, in line with established norms and practices.
+\\[\@thesiscertificatebigskip]
 
 
 \begin{flushright}
@@ -243,7 +248,7 @@ and practices. \\[\@thesiscertificatebigskip]
     \cleardoublepage
     \begin{center}
       {\large \bf ABSTRACT}\\[\@thesiscertificatebigskip]
-      Name of Student: \textbf{\@author}\hspace{1 cm}Roll no: \textbf{\@rollnum} \\
+      Name of Student: \textbf{\@author}\hspace{1 cm}Roll No.: \textbf{\@rollnum} \\
       Degree for which submitted: \textbf{\@iitkdegree} \\
       Department: \textbf{\@department} \\
       Thesis Title: \textbf{\@title} \\
