@@ -1,9 +1,22 @@
 % --------------------------------------------------------------------------- %
+% Heading levels in report class:
+% - chapter (1), section (2), subsection (3), subsubsection (4)
+% - paragraph (5), subparagraph (6)
+% Enable \paragraph (numbering, and ToC) (till 4 is enabled by default)
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+% --------------------------------------------------------------------------- %
 % clever references
 % /usepackage{cleveref}
 
-\crefformat{chapter}{#2Chapter~#1#3}
-\Crefformat{chapter}{#2Chapter~#1#3}
+\makeatletter
+\@ifundefined{chapter}{}{%
+    \crefformat{chapter}{#2Chapter~#1#3}
+    \Crefformat{chapter}{#2Chapter~#1#3}
+}
+\makeatother
 \crefformat{section}{#2Section~#1#3}
 \Crefformat{section}{#2Section~#1#3}
 \crefformat{figure}{#2Figure~#1#3}
@@ -21,7 +34,13 @@
 %  Single counter for theorems and theorem-like environments:
 % =========================================================================== %
 
-\newtheorem{theorem}{Theorem}[chapter]
+\makeatletter
+\@ifundefined{chapter}{
+    \newtheorem{theorem}{Theorem}[section]
+}{%
+    \newtheorem{theorem}{Theorem}[chapter]
+}
+\makeatother
 \newtheorem{assertion}[theorem]{Assertion}
 \newtheorem{claim}[theorem]{Claim}
 \newtheorem{conjecture}[theorem]{Conjecture}
@@ -43,7 +62,13 @@
 \newfloat{program}{thp}{lop}
 \floatname{program}{Figure}
 
-\numberwithin{program}{chapter}
+\makeatletter
+\@ifundefined{chapter}{
+    \numberwithin{program}{section}
+}{
+    \numberwithin{program}{chapter}
+}
+\makeatother
 %%begin novalidate
 \BeforeBeginEnvironment{program}{\begin{singlespace}}
 \AfterEndEnvironment{program}{\end{singlespace}}

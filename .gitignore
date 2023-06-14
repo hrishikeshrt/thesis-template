@@ -21,14 +21,17 @@
 *.run.xml
 comment.cut
 
-# allow final pdfs and pdfs needed as graphics
+# allow final pdfs, special documents pdfs and pdfs needed as graphics
 !**/final/*.pdf
 !**/graphics/*.pdf
+!**/docs/**/*.pdf
 
 # caution - workflow specific
 # main-file-with-input-imports -(combine)-> single.tex -(replace)-> final.tex
 single.tex
 final.tex
+single_*.tex
+final_*.tex
 
 *.zip
 

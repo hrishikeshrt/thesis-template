@@ -1,0 +1,41 @@
+\documentclass{iitksynopsis}
+
+\include{preamble/packages}
+\include{preamble/format}
+\include{preamble/macro}
+\include{preamble/shortcuts}
+
+\graphicspath{{graphics/}}
+
+\newcounter{numrefs}
+
+\begin{document}
+
+\input{prelude_synopsis}
+
+% =========================================================================== %
+
+\input{synopsis/synopsis}
+
+% =========================================================================== %
+% CITATIONS
+
+% \begin{singlespace}
+%     \bibliographystyle{apalike}
+%     \bibliography{citations}
+% \end{singlespace}
+
+% =========================================================================== %
+% PUBLICATIONS
+% Put publications in publications.bib, edit style in publications.tex
+% Make generates publications.bbl first and includes it here
+
+\begin{singlespace}
+\cleardoublepage
+\renewcommand\refname{Publications}
+\input{publications.bbl}
+\end{singlespace}
+
+% =========================================================================== %
+
+\end{document}
