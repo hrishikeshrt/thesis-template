@@ -62,15 +62,33 @@
 
 %--------------------------------------------------------------------%
 % CERTIFICATE
-%     The first page after the title page.
+% The first page after the title page.
+
+% % Define advisor's signature
+% \advisorsignature{
+% \vspace*{-3em}
+% \includegraphics[scale=0.45]{advisor_signature.png}
+% \hspace*{0.1cm}
+% \\[-2.5em]
+% }
+% % Enable advisor's signature on Certificate page
+% \advisorsignaturetrue
+
 \makecertificate
 
 %--------------------------------------------------------------------%
 % DECLARATION
-%
-% \signaturefile{graphics/student_signature.png} % define full path to student's signature
-% \signaturescale{0.75}  % define scale for student's signature
-% \signaturetrue     % enable student's signature on declaration page
+% Declaration format as required by IITK Thesis Processing Cell
+
+% % Define student's signature
+% \studentsignature{
+% \vspace*{-3em}
+% \includegraphics[scale=0.45]{student_signature.png}
+% \hspace*{1cm}
+% \\[-2.8em]
+% }
+% % Enable student's signature on Declaration page
+% \studentsignaturetrue
 
 \makedeclaration
 
