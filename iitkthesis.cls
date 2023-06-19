@@ -91,6 +91,11 @@
 \newcommand\@thesistitlemedskip{0.25in}
 \newcommand\@thesistitlebigskip{0.6in}
 \newcommand{\rollnum}[1]{\gdef\@rollnum{#1}}
+
+\newif\ifsignature
+\newcommand{\signaturefile}[1]{\gdef\@signaturefile{#1}}
+\newcommand{\signaturescale}[1]{\gdef\@signaturescale{#1}}
+
 \newcommand{\iitkdegree}[1]{\gdef\@iitkdegree{#1}}
 \newcommand{\iitkprogramme}[1]{\gdef\@iitkprogramme{#1}}
 \newcommand{\department}[1]{\gdef\@department{#1}}
@@ -107,6 +112,8 @@
 \gdef\@iitkprogramme{Unknown Programme} % Default is Unknown Programme
 \gdef\@doctype{preliminary report}  % Default is a preliminary report
 \gdef\@department{(Unknown Department)} % Default is Unknown
+\gdef\@signaturefile{graphics/student_signature.png} % Default signature location
+\gdef\@signaturescale{0.75} % Default signature image scale
 
 \renewcommand{\maketitle}{%
   \begin{titlepage}
@@ -225,6 +232,16 @@ acknowledgments, in line with established norms and practices.
 
 
 \begin{flushright}
+    {
+      \ifsignature
+      \IfFileExists{\@signaturefile}{
+      \vspace*{-3em}
+      \includegraphics[scale=\@signaturescale]{\@signaturefile}
+      \hspace*{1cm}
+      \\[-2.8em]
+      }{}
+      \fi
+    }
     \rule{6cm}{1sp} \\
     Signature \\
     Name: \@author \\
