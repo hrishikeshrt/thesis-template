@@ -37,4 +37,4 @@ Thesis Template for IIT Kanpur (PhD/MS/MTech etc.)
 
 ## Credits
 
-* Forked from https://www.overleaf.com/latex/templates/indian-institute-of-technology-kanpur-thesis-template/jxphypgkqdmh
+* Built by improving and restructuring the original template from https://www.overleaf.com/latex/templates/indian-institute-of-technology-kanpur-thesis-template/jxphypgkqdmh
